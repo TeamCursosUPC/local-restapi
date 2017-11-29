@@ -29,7 +29,7 @@ module.exports = function badRequest(data, options) {
   if (data !== undefined) {
     sails.log.verbose('Sending 400 ("Bad Request") response: \n',data);
   }
-  else sails.log.verbose('Sending 400 ("Bad Request") response');
+  else sails.log.verbose('Sending 400 ("Bad Request") response ');
 
   // Only include errors in response if application environment
   // is not set to 'production'.  In production, we shouldn't

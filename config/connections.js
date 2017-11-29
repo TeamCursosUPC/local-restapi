@@ -32,6 +32,17 @@ module.exports.connections = {
     adapter: 'sails-disk'
   },
 
+  sqlserver: {
+    adapter: process.env.bdAdapter || 'sails-sqllite',
+    host: process.env.bdHost || 'localhost',
+    user: process.env.bdUser || 'user',
+    password: process.env.bdPassword || 'password',
+    database: process.env.bdDatabase || 'test',
+    options: {
+      encrypt: process.env.bdEncryt || false
+    }
+  }
+
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
@@ -82,11 +93,10 @@ module.exports.connections = {
   //   database: 'YOUR_POSTGRES_DB' //optional
   // }
 
-
   /***************************************************************************
   *                                                                          *
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
 
-};
+}
