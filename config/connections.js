@@ -38,8 +38,17 @@ module.exports.connections = {
     user: process.env.bdUser || 'user',
     password: process.env.bdPassword || 'password',
     database: process.env.bdDatabase || 'test',
+    port: process.env.bdPort || 1433,
+    connectionTimeout: 15 * 1000,
+    requestTimeout: 15 * 1000,
+    persistent: true,
     options: {
       encrypt: process.env.bdEncryt || false
+    },
+    pool: {
+      min: 5,
+      max: 30,
+      idleTimeout: 300 * 1000
     }
   }
 
